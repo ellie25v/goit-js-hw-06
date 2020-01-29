@@ -83,10 +83,9 @@ console.log(getNamesSortedByFriendsCount(users));
 // при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
 const getSortedUniqueSkills = users => {
-    const skillsNotUnique = users.reduce((user, {
-        skills
-    }) => [...user, ...skills], []);
-    return skillsNotUnique.sort();
+    let skillsNotUnique = users.reduce((user, {skills}) => [...user, ...skills], []);
+    
+    return [...new Set(skillsNotUnique.sort())];
 };
 
 console.log(getSortedUniqueSkills(users));
