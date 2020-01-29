@@ -84,7 +84,7 @@ console.log(getNamesSortedByFriendsCount(users));
 
 const getSortedUniqueSkills = users => {
     const skillsNotUnique = users.reduce((user, {skills}) => [...user, ...skills], []);
-    return [...new Set(skillsNotUnique.sort())];
+    return [...skillsNotUnique.sort()];
 };
 
 console.log(getSortedUniqueSkills(users));
